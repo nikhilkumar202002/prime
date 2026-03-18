@@ -5,31 +5,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
-  { label: "About us", href: "/about" },
-  { label: "Multipurpose Hall", href: "/conference" },
-  { label: "Events", href: "/conference" },
-];
+    const navLinks = [
+      { label: "About us", href: "/about" },
+    ];
 
-const dotLinks = [
-  { label: "Education", href: "/study-centre" },
-  { label: "Lifestyle & Fun", href: "/vendor" },
-  { label: "Wellness & Fitness", href: "/wellness", hasMega: true },
-];
+    const dotLinks = [
+      { label: "Wellness & Fitness", hasMega: true },
+      { label: "Lifestyle & Fun", href: "/vendor", hasMega: true },
+      { label: "Education", href: "/study-centre" },
+      { label: "Multipurpose Hall ", href: "/conference" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Contact", href: "/contact" },
+    ];
 
-const wellnessItems = [
-  { title: "Oxy Gym", img: "/images/gym.webp", href: "/gym" },
-  { title: "Swimming Pool", img: "/images/swim.webp", href: "/pool-booking" },
-  { title: "Spa & Salon", img: "/images/gim_slider.jpg.jpeg", href: "/spa" },
-  { title: "Pharmacy", img: "/images/hall.webp", href: "/pharmacy" },
-  { title: "Diet & Diabetic..", img: "/images/7adf76efdedce63095cbc41318e882376e7b15ba.png", href: "/pharmacy" },
-];
+    const wellnessItems = [
+      { title: "Oxy Gym", img: "/images/gym.webp", href: "/gym" },
+      { title: "Swimming Pool", img: "/images/swim.webp", href: "/pool-booking" },
+      { title: "Spa & Salon", img: "/images/gim_slider.jpg.jpeg", href: "/spa" },
+      { title: "Pharmacy", img: "/images/hall.webp", href: "/pharmacy" },
+      { title: "Diet & Diabetic..", img: "/images/7adf76efdedce63095cbc41318e882376e7b15ba.png", href: "/pharmacy" },
+    ];
 
-const lifestyleItems = [
-  { title: "Multi-Brand Retail Store", img: "/images/shop.webp", href: "/vendor" },
-  { title: "Café", img: "/images/cafe.webp", href: "/vendor#cafe" },
-  { title: "Gaming Arcade", img: "/images/arcade.webp", href: "/vendor#arcade" },
-];
+    const lifestyleItems = [
+      { title: "Multi-Brand Retail Store", img: "/images/forever-innerpage-slider.jpeg", href: "/vendor" },
+      { title: "Café", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/b5/ea/50/je-bent-jezelf-niet-als.jpg?w=900&h=500&s=1", href: "/vendor#cafe" },
+      { title: "Gaming Arcade", img: "https://i.etsystatic.com/23665971/r/il/4bcce4/3445693810/il_fullxfull.3445693810_m4vj.jpg", href: "/vendor#arcade" },
+    ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -162,18 +163,35 @@ export default function Header() {
                   {dotLinks.map((link) => (
                     <div
                       key={link.label}
-                      onMouseEnter={() => setHoveredLink(link.label)}
+                      onMouseEnter={link.hasMega ? () => setHoveredLink(link.label) : undefined}
                       className="w-full"
                     >
-                      <Link
-                        href={link.href}
-                        className="group flex items-center gap-4 justify-end w-full text-white text-[25px] font-light hover:opacity-60 transition-opacity"
-                      >
-                        <span className={`w-2.5 h-2.5 rounded-full bg-white transition-all ${
-                          hoveredLink === link.label ? "bg-green-400 shadow-[0_0_10px_#4ade80]" : ""
-                        }`} />
-                        {link.label}
-                      </Link>
+                      {link.href ? (
+                        <Link
+                          href={link.href}
+                          className="group flex items-center gap-4 justify-end w-full text-white text-[25px] font-light hover:opacity-60 transition-opacity"
+                        >
+                          {link.hasMega && (
+                            <span className={`w-2.5 h-2.5 rounded-full bg-white transition-all ${
+                              hoveredLink === link.label ? "bg-green-400 shadow-[0_0_10px_#4ade80]" : ""
+                            }`} />
+                          )}
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <div
+                          role="button"
+                          tabIndex={0}
+                          className="group flex items-center gap-4 justify-end w-full text-white text-[25px] font-light hover:opacity-60 transition-opacity cursor-default"
+                        >
+                          {link.hasMega && (
+                            <span className={`w-2.5 h-2.5 rounded-full bg-white transition-all ${
+                              hoveredLink === link.label ? "bg-green-400 shadow-[0_0_10px_#4ade80]" : ""
+                            }`} />
+                          )}
+                          {link.label}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </motion.div>

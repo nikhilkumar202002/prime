@@ -1,4 +1,4 @@
-import Eduimage from "../../../public/images/edu-sub-sec.jpg"
+// use image from public folder directly (serve via `/images/...` path)
 
 export const metadata = { title: "Study Centre – Prime Promenade" };
 
@@ -187,7 +187,7 @@ export default function StudyCentrePage() {
               <div className="flex flex-col gap-4 mt-2">
                 <div className="flex items-center gap-4">
                   <img
-                    src={Eduimage.src}
+                    src="/images/edu-sub-sec.jpg"
                     alt=""
                     className="w-7 h-7 object-contain flex-shrink-0"
                   />
@@ -261,7 +261,7 @@ export default function StudyCentrePage() {
               <div className="flex flex-col gap-4 mt-2">
                 <div className="flex items-center gap-4">
                   <img
-                    src="/images/1721680ec8a6614bc471f803eb78b289b514ecec.png"
+                    src="/images/edu-sub-sec.jpg"
                     alt=""
                     className="w-7 h-7 object-contain flex-shrink-0"
                   />
