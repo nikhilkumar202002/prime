@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime Promenade – Many Experiences</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lime': '#e1ff83',
+            'dark': '#0e0e0e',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          letterSpacing: {
+            tight2: '-0.04em',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .glass { backdrop-filter: blur(18px); background: rgba(255,255,255,0.2); }
+    .glass-dark { backdrop-filter: blur(18px); background: rgba(0,0,0,0.4); }
+    .dot::before {
+      content: '';
+      display: inline-block;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: currentColor;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .section-label { display: flex; align-items: center; gap: 12px; font-size: 20px; }
+    .section-label span { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    /* Scroll-snap for level panels */
+    .snap-x { scroll-snap-type: x mandatory; }
+    .snap-start { scroll-snap-align: start; }
+  </style>
+</head>
+<body class="bg-white text-black overflow-x-hidden">
+
+  <!-- ═══════════════════ HEADER ═══════════════════ -->
+  <header class="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 lg:px-16 py-6">
+    <!-- Logo -->
+    <img src="images/logosvg.svg" alt="Prime Promenade" style="width:241px; height:65px;" />
+    <!-- Menu button -->
+    <button class="glass rounded-full px-8 py-3 flex items-center gap-3 text-white text-lg font-light cursor-pointer">
+      <span>Menu</span>
+      <img src="images/225e9961f88485e9827ea6247860c6d5a16d9a95.svg" alt="" class="w-3 h-5 object-contain" />
+    </button>
+  </header>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="relative w-full h-screen min-h-[600px] overflow-hidden">
+    <!-- Video background -->
+    <video autoplay loop playsinline muted class="absolute inset-0 w-full h-full object-cover">
+      <source src="videos/0_Shopping_Mall_Luxury_3840x2160.mp4" type="video/mp4" />
+    </video>
+    <!-- Dark overlay gradient -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+
+    <!-- Content -->
+    <div class="relative h-full flex flex-col justify-end pb-20 px-8 lg:px-16">
+      <div class="grid lg:grid-cols-2 gap-10 items-end">
+        <!-- Headline -->
+        <h1 class="text-white text-4xl sm:text-5xl lg:text-7xl xl:text-[84px] font-normal leading-[1.1] tracking-[-0.02em] whitespace-nowrap">
+          Prime Promenade.<br>Many Experiences.
+        </h1>
+        <!-- Sub-copy + CTAs -->
+        <div class="flex flex-col gap-6 lg:items-end">
+          <p class="text-white text-lg lg:text-xl leading-relaxed max-w-md lg:text-right">
+            A premium four-floor lifestyle destination seamlessly blending fitness, wellness, business, and modern luxury experiences.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button class="glass rounded-full px-8 py-4 text-white text-lg capitalize hover:bg-white/30 transition-colors">
+              Explore Amenities
+            </button>
+            <button class="glass rounded-full px-8 py-4 text-white text-lg capitalize hover:bg-white/30 transition-colors">
+              Partner With Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOUR FLOORS INTRO ═══════════════════ -->
+  <section class="py-20 lg:py-28 px-8 lg:px-16 xl:px-32">
+    <!-- Label -->
+    <div class="flex items-center gap-3 mb-6 justify-center">
+      <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+      <span class="text-xl">The Destination</span>
+    </div>
+    <h2 class="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2] text-center mb-6">
+      Four Floors of<br />Unmatched Excellence
+    </h2>
+    <p class="text-center text-lg lg:text-xl max-w-3xl mx-auto text-black/80 mb-14 leading-relaxed">
+      A contemporary architectural landmark uniting premium fitness, wellness, corporate spaces, and lifestyle retail into one world-class destination.
+    </p>
+
+    <!-- Image Grid: 3 columns (2:1:1) matching Figma exactly -->
+    <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-5 items-start">
+
+      <!-- Col 1: Large tall image — Rectangle6 -->
+      <div class="relative rounded-[24px] overflow-hidden h-[480px] md:h-[600px] lg:h-[729px]">
+        <img src="images/1bcc5c4d081472f10ce51878271b71a7182c1268.png" alt="Prime Promenade Interior" class="absolute inset-0 w-full h-full object-cover" style="object-position: center center;" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent from-[57%] to-black/80 rounded-[24px]"></div>
+        <div class="absolute bottom-8 left-8 text-white max-w-sm">
+          <p class="text-2xl font-medium leading-tight mb-3">Elevating Lifestyle, Under One Roof</p>
+          <p class="text-base opacity-90 leading-relaxed tracking-tight">A thoughtfully planned four-floor destination where luxury architecture meets purposeful design—crafted to elevate fitness, wellness, business, and lifestyle experiences under one iconic roof.</p>
+        </div>
+      </div>
+
+      <!-- Col 2: Top image + bottom lime card stacked — Rectangle7 + lime -->
+      <div class="flex flex-col gap-5">
+        <!-- Top: Designer Interiors image — Rectangle7 -->
+        <div class="relative rounded-[24px] overflow-hidden h-[240px] md:h-[280px] lg:h-[352px]">
+          <img src="images/421fba8ad9be007925e28b68595dd1e9801206b0.png" alt="Designer Interiors" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent from-[45%] to-black/70 rounded-[24px]"></div>
+          <div class="absolute bottom-5 left-5 text-white">
+            <p class="text-xl font-medium leading-tight">Designer Interiors</p>
+            <p class="text-sm mt-1 opacity-90">Curated by award-winning architects</p>
+          </div>
+        </div>
+        <!-- Bottom: Smart Access lime card -->
+        <div class="bg-[#e1ff83] rounded-[24px] h-[240px] md:h-[280px] lg:h-[352px] p-6 flex flex-col justify-between">
+          <img src="images/4cd4de5e688bee548fb61776ab7a8d5c0ada1349.png" alt="" class="w-10 h-10 object-contain" />
+          <div>
+            <p class="text-xl font-medium text-black leading-tight mb-2">Smart Access</p>
+            <p class="text-base text-black/80 leading-relaxed tracking-tight">Biometric &amp; card-based secure entry systems</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Tall image full height — Rectangle9 -->
+      <div class="relative rounded-[24px] overflow-hidden h-[480px] md:h-[600px] lg:h-[729px]">
+        <img src="images/31573c6eb4e2d6458be302ad6c5c8ef77abf46ce.png" alt="Premium Security" class="absolute inset-0 w-full h-full object-cover" style="object-position: center center;" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent from-[74%] to-black/20 rounded-[24px]"></div>
+        <div class="absolute bottom-8 left-6 text-white">
+          <p class="text-xl font-medium leading-tight mb-2">Premium Security</p>
+          <p class="text-base opacity-90 tracking-tight">24/7 surveillance &amp; concierge services</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EVERY LEVEL – FLOOR PANELS ═══════════════════ -->
+  <section class="py-16 lg:py-24 px-8">
+    <div class="flex items-center gap-3 mb-6 justify-center">
+      <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+      <span class="text-xl">Floor by Floor</span>
+    </div>
+    <h2 class="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2] text-center mb-14">
+      Every Level, a New<br />Experience
+    </h2>
+
+    <div class="flex flex-col gap-5">
+
+      <!-- Panel 1: Aqua & Wellness -->
+      <div class="relative rounded-[20px] overflow-hidden h-[520px] lg:h-[640px]">
+        <img src="images/54d69a57555e93494ff1bdfd04d20bfb6f541390.png" alt="Aqua & Wellness" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0" style="background: linear-gradient(211.6deg, rgba(0,0,0,0) 59.5%, rgba(0,0,0,0.8) 83.3%);"></div>
+        <div class="absolute bottom-14 left-8 lg:left-14 text-white">
+          <div class="flex items-center gap-3 mb-4 text-lg opacity-90">
+            <span class="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
+            Ground Floor
+          </div>
+          <h3 class="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4">Aqua &amp; Wellness</h3>
+          <p class="text-lg lg:text-xl max-w-md leading-relaxed opacity-90">
+            Private swimming pools with exclusive hourly bookings, pharmacy, diet &amp; diabetic center, and EV charging stations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 2: Retail & Corporate -->
+      <div class="relative rounded-[20px] overflow-hidden h-[520px] lg:h-[640px]">
+        <img src="images/32a0c53f9946cb8f184ce08811041cacbba40843.png" alt="Retail & Corporate" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0" style="background: linear-gradient(130.7deg, rgba(0,0,0,0) 50.5%, rgba(0,0,0,0.357) 60.5%, rgba(0,0,0,0.8) 93.1%);"></div>
+        <div class="absolute bottom-14 right-8 lg:right-14 text-white text-right">
+          <div class="flex items-center justify-end gap-3 mb-4 text-lg opacity-90">
+            <span class="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
+            First &amp; Second Floor
+          </div>
+          <h3 class="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4">Retail &amp; Corporate</h3>
+          <p class="text-lg lg:text-xl max-w-md ml-auto leading-relaxed opacity-90">
+            Branded retail outlets on the first floor. Conference hall with multimedia setup, seminar &amp; study rooms on the second.
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 3: Fitness & Sports -->
+      <div class="relative rounded-[20px] overflow-hidden h-[520px] lg:h-[640px]">
+        <img src="images/f6c322b46d2c4af7e797fb99adc6c06396871088.png" alt="Fitness & Sports" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0" style="background: linear-gradient(43.5deg, rgba(0,0,0,0.8) 6.5%, rgba(0,0,0,0.49) 24.6%, rgba(0,0,0,0) 40.5%);"></div>
+        <div class="absolute bottom-14 left-8 lg:left-14 text-white">
+          <div class="flex items-center gap-3 mb-4 text-lg opacity-90">
+            <span class="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
+            Third &amp; Fourth Floor
+          </div>
+          <h3 class="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4">Fitness &amp; Sports</h3>
+          <p class="text-lg lg:text-xl max-w-md leading-relaxed opacity-90">
+            Fully equipped luxury gym with imported equipment, premium spa &amp; recovery zones, and a sports arcade on the top floor.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ AMENITIES CRAFTED ═══════════════════ -->
+  <section class="py-16 lg:py-24 px-8 lg:px-16 xl:px-32">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+      <span class="text-xl">World-Class</span>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-14">
+      <h2 class="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2]">
+        Amenities Crafted for an Elevated Lifestyle
+      </h2>
+      <p class="text-lg lg:text-xl leading-relaxed text-black/80 lg:pt-4">
+        An expertly curated collection of fitness, wellness, corporate, and lifestyle amenities—designed to inspire performance, relaxation, and meaningful experiences in one seamless destination.
+      </p>
+    </div>
+
+    <!-- 5-card amenities grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+
+      <!-- Luxury Gym -->
+      <div class="relative rounded-[20px] overflow-hidden h-72 lg:h-[380px] group">
+        <img src="images/b2a57f7160f31f9330b103083aeec6adf3fdda9d.png" alt="Luxury Gym" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 text-white">
+          <p class="text-xl font-medium leading-tight">Luxury Gym</p>
+          <p class="text-sm mt-1 opacity-90 tracking-tight">World-class imported equipment &amp; personal trainers</p>
+        </div>
+      </div>
+
+      <!-- Private Pools -->
+      <div class="relative rounded-[20px] overflow-hidden h-72 lg:h-[380px] group">
+        <img src="images/28317ffb8bd0cfa481e561949c793bb65e533107.png" alt="Private Pools" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 text-white">
+          <p class="text-xl font-medium leading-tight">Private Pools</p>
+          <p class="text-sm mt-1 opacity-90 tracking-tight">Exclusive hourly bookings for ultimate privacy</p>
+        </div>
+      </div>
+
+      <!-- Wellness Cuisine -->
+      <div class="relative rounded-[20px] overflow-hidden h-72 lg:h-[380px] group">
+        <img src="images/9046ad16dc65d54dc8896ab41b22b24df3a3c150.png" alt="Wellness Cuisine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0" style="background: linear-gradient(165deg, rgba(0,0,0,0) 51.6%, rgba(0,0,0,0.6) 92.3%);"></div>
+        <div class="absolute bottom-5 left-5 text-white">
+          <p class="text-xl font-medium leading-tight">Wellness Cuisine</p>
+          <p class="text-sm mt-1 opacity-90 tracking-tight">Diet products &amp; juice outlets from global brands</p>
+        </div>
+      </div>
+
+      <!-- Conference Hall -->
+      <div class="relative rounded-[20px] overflow-hidden h-72 lg:h-[380px] group">
+        <img src="images/6f32f40e0175ae273ee579a3e5fa8dc789f7af36.png" alt="Conference Hall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 text-white">
+          <p class="text-xl font-medium leading-tight">Conference Hall</p>
+          <p class="text-sm mt-1 opacity-90 tracking-tight">Multimedia-ready corporate event spaces</p>
+        </div>
+      </div>
+
+      <!-- EV Charging -->
+      <div class="relative rounded-[20px] overflow-hidden h-72 lg:h-[380px] group">
+        <img src="images/3b0fbeb4553c6eea235f24eb6a372e22b0718770.png" alt="EV Charging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 text-white">
+          <p class="text-xl font-medium leading-tight">EV Charging</p>
+          <p class="text-sm mt-1 opacity-90 tracking-tight">Future-ready electric vehicle charging stations</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ TRANSFORM YOUR BODY ═══════════════════ -->
+  <section class="relative bg-[#0e0e0e] mx-4 lg:mx-10 rounded-[20px] overflow-hidden pt-16 lg:pt-20 pb-10 lg:pb-12 px-8 lg:px-16 mb-6">
+
+    <!-- Row 1: heading (left) + description (right) -->
+    <div class="grid lg:grid-cols-2 gap-10 mb-10">
+      <div>
+        <div class="flex items-center gap-3 mb-6 text-white">
+          <span class="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
+          <span class="text-xl">Fitness &amp; Wellness</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-[60px] font-normal text-white leading-[1.2]">
+          Transform Your Body.<br>Elevate Your Life.
+        </h2>
+      </div>
+      <div class="lg:flex lg:items-end lg:pb-2">
+        <p class="text-lg text-white/70 leading-relaxed max-w-md">
+          Our Platinum membership unlocks an unparalleled fitness journey — from world-class equipment and private pool sessions to curated nutrition and spa recovery.
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 2: dark feature card (left) + gym image with membership card (right) -->
+    <div class="grid lg:grid-cols-2 gap-5">
+
+      <!-- Left: dark rounded card with feature list -->
+      <div class="bg-[#161616] rounded-[20px] px-10 lg:px-14 py-12 lg:py-14 flex items-center">
+        <ul class="flex flex-col gap-5 w-full">
+          <li class="flex items-center gap-4 text-white text-lg">
+            <img src="images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="★" class="w-7 h-7 flex-shrink-0 object-contain" />
+            Imported gym equipment from global brands
+          </li>
+          <li class="flex items-center gap-4 text-white text-lg">
+            <img src="images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="★" class="w-7 h-7 flex-shrink-0 object-contain" />
+            Private pool experiences with exclusive bookings
+          </li>
+          <li class="flex items-center gap-4 text-white text-lg">
+            <img src="images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="★" class="w-7 h-7 flex-shrink-0 object-contain" />
+            Platinum membership with premium perks
+          </li>
+          <li class="flex items-center gap-4 text-white text-lg">
+            <img src="images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="★" class="w-7 h-7 flex-shrink-0 object-contain" />
+            Diet products from international wellness brands
+          </li>
+          <li class="flex items-center gap-4 text-white text-lg">
+            <img src="images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="★" class="w-7 h-7 flex-shrink-0 object-contain" />
+            Wellness-focused breakfast &amp; fresh juice bar
+          </li>
+          <li class="flex items-center gap-4 text-white text-lg">
+            <img src="images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="★" class="w-7 h-7 flex-shrink-0 object-contain" />
+            Luxury spa &amp; holistic recovery zones
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: gym image with centered glassmorphism membership card -->
+      <div class="relative h-[480px] lg:h-[596px] rounded-[20px] overflow-hidden">
+        <img src="images/060cc9853c06cfa47f94502c8517d564c50ff930.png" alt="Fitness" class="w-full h-full object-cover" />
+        <!-- Centred glassmorphism card -->
+        <div class="absolute inset-0 flex items-center justify-center p-10">
+          <div class="relative rounded-[20px] overflow-hidden w-full max-w-[380px]">
+            <div class="absolute inset-0 bg-white/15 backdrop-blur-xl rounded-[20px]"></div>
+            <div class="relative z-10 flex flex-col items-center gap-4 p-8 text-center">
+              <div class="glass-dark rounded-full px-5 py-2">
+                <span class="text-white text-sm">Membership</span>
+              </div>
+              <h3 class="text-4xl lg:text-[44px] text-white font-normal">Platinum</h3>
+              <p class="text-white/90 text-base leading-relaxed">
+                Unlimited access to all floors, priority pool bookings, personal trainer sessions, spa credits, and exclusive member events.
+              </p>
+              <button class="glass-dark rounded-full px-10 py-4 text-white text-base mt-2 hover:bg-white/20 transition-colors">
+                Enquire Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BUILT FOR VISIONARIES ═══════════════════ -->
+  <section class="py-20 lg:py-28 px-8 lg:px-16 xl:px-32">
+    <div class="flex items-center gap-3 mb-6 justify-center">
+      <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+      <span class="text-xl">Who It's For</span>
+    </div>
+    <h2 class="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2] text-center mb-14">
+      Built for Visionaries
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+
+      <!-- Corporate Offices -->
+      <div class="bg-black/10 rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+        <img src="images/bac6647dead1dcf8796d89548ad0d9030750c703.png" alt="" class="w-12 h-12 object-contain" />
+        <div>
+          <p class="text-xl font-medium text-black leading-tight mb-2">Corporate Offices</p>
+          <p class="text-base text-black/70 leading-relaxed tracking-tight">Modern, secure, and scalable spaces designed for forward-thinking businesses and corporate leaders.</p>
+        </div>
+      </div>
+
+      <!-- Wellness Brands -->
+      <div class="bg-[#e1ff83] rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+        <img src="images/609ac97b47e7ccf533a83e1838d32ea943c24c1f.png" alt="" class="w-11 h-11 object-contain" />
+        <div>
+          <p class="text-xl font-medium text-black leading-tight mb-2">Wellness Brands</p>
+          <p class="text-base text-black/70 leading-relaxed tracking-tight">A premium platform for wellness, fitness, nutrition, and healthcare brands to thrive and connect.</p>
+        </div>
+      </div>
+
+      <!-- Event Organisers -->
+      <div class="bg-black rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+        <img src="images/e9d0d569b260a460f66a5cd0f6436acd3100e83d.png" alt="" class="w-12 h-12 object-contain" />
+        <div>
+          <p class="text-xl font-medium text-white leading-tight mb-2">Event Organisers</p>
+          <p class="text-base text-white/70 leading-relaxed tracking-tight">Fully equipped venues ideal for workshops, launches, seminars, and curated lifestyle events.</p>
+        </div>
+      </div>
+
+      <!-- Health-Conscious Individuals -->
+      <div class="bg-[#e1ff83] rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+        <img src="images/79d71fe981328cf24207baf0ab5d971401991dbc.png" alt="" class="w-12 h-12 object-contain" />
+        <div>
+          <p class="text-xl font-medium text-black leading-tight mb-2">Health-Conscious Individuals</p>
+          <p class="text-base text-black/70 leading-relaxed tracking-tight">An elevated environment for fitness, balance, and holistic well-being.</p>
+        </div>
+      </div>
+
+      <!-- Lifestyle Seekers -->
+      <div class="bg-black/10 rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+        <img src="images/456f2242cc66315851ca48ea1151bed122a71508.png" alt="" class="w-12 h-12 object-contain" />
+        <div>
+          <p class="text-xl font-medium text-black leading-tight mb-2">Lifestyle Seekers</p>
+          <p class="text-base text-black/70 leading-relaxed tracking-tight">For those who value premium experiences, modern amenities, and a refined way of living.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WHERE EXPERIENCES SPARK CONNECTIONS ═══════════════════ -->
+  <section class="py-16 lg:py-24 px-8 lg:px-16 xl:px-32">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+      <span class="text-xl">Experiences</span>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start mb-14">
+      <h2 class="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2]">
+        Where Experiences Spark Connections
+      </h2>
+      <p class="text-lg lg:text-xl leading-relaxed text-black/80 lg:pt-4">
+        A vibrant platform for meaningful connections—bringing together fitness, business, and lifestyle through curated events, workshops, and networking experiences.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Left: sub-grid [treadmill tall | lime card + fitness image] -->
+      <div class="grid grid-cols-[1.46fr_1fr] gap-5">
+        <!-- Sub-col 1: tall treadmill image -->
+        <div class="relative rounded-[20px] overflow-hidden" style="height:643px;">
+          <img src="images/3fa0c2858a9883222e6043946c0974f99572a294.png" alt="Events" class="w-full h-full object-cover" />
+        </div>
+        <!-- Sub-col 2: lime stat card (top) + fitness image (bottom) -->
+        <div class="flex flex-col gap-5">
+          <!-- Lime stat card -->
+          <div class="bg-[#e1ff83] rounded-[20px] p-7 flex flex-col justify-between" style="height:243px;">
+            <div>
+              <p class="text-[50px] font-normal leading-none tracking-[-0.04em]">1,000+</p>
+              <p class="text-xl font-semibold mt-1">Happy Clients</p>
+            </div>
+            <div class="flex -space-x-3">
+              <img src="images/bccc84f152be39833770bb1625118a39508489ef.png" alt="" class="w-12 h-12 rounded-full border-2 border-white object-cover" />
+              <img src="images/29aa100af6d99d46902df7c09b2eead27d5d58d0.png" alt="" class="w-12 h-12 rounded-full border-2 border-white object-cover" />
+              <img src="images/78ad0655e47e0e880a4eab9e038c9fe72e2d3555.png" alt="" class="w-12 h-12 rounded-full border-2 border-white object-cover" />
+              <img src="images/cde7431ea7d5385827e0d5281f5ea19942faa61f.png" alt="" class="w-12 h-12 rounded-full border-2 border-white object-cover" />
+            </div>
+          </div>
+          <!-- Fitness woman image -->
+          <div class="relative rounded-[20px] overflow-hidden flex-1">
+            <img src="images/a3ddcd321732f87c8a1ced84089f07f10544b498.png" alt="Networking" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: event list -->
+      <div class="flex flex-col divide-y divide-black/10">
+
+        <div class="flex items-start justify-between py-8 gap-6">
+          <div class="flex flex-col gap-3">
+            <p class="text-2xl lg:text-[30px] font-medium leading-[1.2]">Launch Events</p>
+            <p class="text-lg lg:text-xl text-black/70">Grand openings and product launches in premium venues</p>
+          </div>
+          <p class="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">01</p>
+        </div>
+
+        <div class="flex items-start justify-between py-8 gap-6">
+          <div class="flex flex-col gap-3">
+            <p class="text-2xl lg:text-[30px] font-medium leading-[1.2]">Fitness Workshops</p>
+            <p class="text-lg lg:text-xl text-black/70">Expert-led training sessions and wellness seminars</p>
+          </div>
+          <p class="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">02</p>
+        </div>
+
+        <div class="flex items-start justify-between py-8 gap-6">
+          <div class="flex flex-col gap-3">
+            <p class="text-2xl lg:text-[30px] font-medium leading-[1.2]">Corporate Open Houses</p>
+            <p class="text-lg lg:text-xl text-black/70">Networking events in world-class conference facilities</p>
+          </div>
+          <p class="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">03</p>
+        </div>
+
+        <div class="flex items-start justify-between py-8 gap-6">
+          <div class="flex flex-col gap-3">
+            <p class="text-2xl lg:text-[30px] font-medium leading-[1.2]">Business Networking</p>
+            <p class="text-lg lg:text-xl text-black/70">Curated connections between brands and professionals</p>
+          </div>
+          <p class="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">04</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BEGIN YOUR JOURNEY (CONTACT + FOOTER) ═══════════════════ -->
+  <section class="bg-[#0e0e0e] pt-20 lg:pt-28 pb-0">
+    <div class="px-8 lg:px-16 xl:px-32">
+      <!-- Label + heading -->
+      <div class="flex items-center gap-3 mb-6 justify-center">
+        <span class="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
+        <span class="text-xl text-white">Get in Touch</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2] text-white text-center mb-16">
+        Begin Your Journey
+      </h2>
+
+      <!-- Contact grid -->
+      <div class="grid lg:grid-cols-2 gap-8">
+
+        <!-- Left: Visit Us card -->
+        <div class="bg-[#181818] rounded-[20px] p-8 lg:p-10 flex flex-col gap-7">
+          <div>
+            <p class="text-2xl font-medium text-white mb-3">Visit Us</p>
+            <p class="text-lg text-white/80 leading-relaxed">
+              Schedule a private tour of our 4-floor lifestyle destination. Experience the space firsthand and discover your perfect fit.
+            </p>
+          </div>
+          <div class="flex flex-col gap-6 text-white">
+            <div>
+              <p class="text-lg capitalize tracking-tight mb-1">Location:</p>
+              <p class="text-base text-white/60 font-light leading-relaxed">Premium Commercial District, City Center</p>
+            </div>
+            <div class="h-px bg-white/20"></div>
+            <div>
+              <p class="text-lg capitalize tracking-tight mb-1">Phone:</p>
+              <p class="text-base text-white/60 font-light">+1 (555) 000-0000</p>
+            </div>
+            <div class="h-px bg-white/20"></div>
+            <div>
+              <p class="text-lg capitalize tracking-tight mb-1">Email:</p>
+              <p class="text-base text-white/60 font-light">info@elevate-wellness.com</p>
+            </div>
+            <div class="h-px bg-white/20"></div>
+            <div>
+              <p class="text-xl capitalize mb-4">Inquire About</p>
+              <div class="flex flex-wrap gap-2">
+                <button class="border border-white/30 rounded-full px-5 py-2.5 text-base text-white font-light hover:bg-white/10 transition-colors">Memberships</button>
+                <button class="border border-white/30 rounded-full px-5 py-2.5 text-base text-white font-light hover:bg-white/10 transition-colors">Leasing</button>
+                <button class="border border-white/30 rounded-full px-5 py-2.5 text-base text-white font-light hover:bg-white/10 transition-colors">Partnerships</button>
+                <button class="border border-white/30 rounded-full px-5 py-2.5 text-base text-white font-light hover:bg-white/10 transition-colors">Events</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact form -->
+        <form class="flex flex-col gap-10 pt-2">
+          <div class="flex flex-col gap-3 border-b border-white/30 pb-6">
+            <label class="text-xl capitalize text-white/80 tracking-tight">Full Name</label>
+            <input type="text" placeholder="" class="bg-transparent text-white text-lg outline-none placeholder-white/40 pb-1" />
+          </div>
+          <div class="flex flex-col gap-3 border-b border-white/30 pb-6">
+            <label class="text-xl capitalize text-white/80 tracking-tight">Email Address</label>
+            <input type="email" placeholder="" class="bg-transparent text-white text-lg outline-none placeholder-white/40 pb-1" />
+          </div>
+          <div class="flex flex-col gap-3 border-b border-white/30 pb-6">
+            <label class="text-xl capitalize text-white/80 tracking-tight">I'm Interested In...</label>
+            <div class="flex items-center justify-between">
+              <input type="text" placeholder="" class="bg-transparent text-white text-lg outline-none placeholder-white/40 pb-1 flex-1" />
+              <svg class="w-4 h-3 text-white/60 flex-shrink-0" viewBox="0 0 13 7" fill="none"><path d="M1 1L6.5 6L12 1" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+          </div>
+          <div class="flex flex-col gap-10 border-b border-white/30 pb-16">
+            <label class="text-xl capitalize text-white/80 tracking-tight">Your Message</label>
+            <textarea rows="1" class="bg-transparent text-white text-lg outline-none resize-none pb-1"></textarea>
+          </div>
+          <button type="submit" class="bg-[#0e0e0e] border border-white/20 rounded-full py-5 text-xl text-white capitalize text-center hover:bg-white/10 transition-colors">
+            Send Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer strip — pure white card, black text, matching Figma -->
+    <div class="mt-20 mx-4 lg:mx-10 bg-white rounded-[30px] p-8 lg:px-12 lg:py-10" style="backdrop-filter: blur(75px);">
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-10">
+
+        <!-- Left: Logo + tagline + social icons -->
+        <div class="flex flex-col gap-5 max-w-xs" style="--fill-0: #000;">
+          <!-- Logo -->
+          <img src="images/prime-logo.png" alt="Prime Promenade" style="width:120px; height:62px; object-fit:contain;" />
+          <!-- Tagline -->
+          <p class="text-base text-black/60 leading-relaxed">
+            A world-class lifestyle destination uniting fitness, wellness, business, and curated experiences under one iconic roof.
+          </p>
+          <!-- Social media icons strip -->
+          <img src="images/461005f0a4b16024c738b9ceeae3cc0efc6a0a94.svg" alt="Social media" style="width:251px; height:26px; --fill-0: #000;" />
+        </div>
+
+        <!-- Right: Nav links -->
+        <nav class="flex flex-col gap-3 text-center lg:text-right lg:pt-2 w-full lg:w-auto items-center lg:items-end">
+          <a href="#" class="text-lg font-semibold text-black capitalize hover:opacity-60 transition-opacity">Amenities</a>
+          <a href="#" class="text-lg font-semibold text-black capitalize hover:opacity-60 transition-opacity">Events</a>
+          <a href="#" class="text-lg font-semibold text-black capitalize hover:opacity-60 transition-opacity">Experience</a>
+          <a href="#" class="text-lg font-semibold text-black capitalize hover:opacity-60 transition-opacity">Wellness</a>
+          <a href="#" class="text-lg font-semibold text-black capitalize hover:opacity-60 transition-opacity">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Divider + copyright -->
+      <div class="mt-8 pt-6 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <p class="text-base text-black/60 capitalize">Copyright © 2026 – All Right Reserved</p>
+        <div class="flex items-center gap-2">
+          <p class="text-base text-black/60 capitalize">designed by :</p>
+          <img src="images/5e81c1bb41d21ff0f9b202b5848b7c58ea018d41.svg" alt="Designer" style="height:35px; width:117px;" />
+        </div>
+      </div>
+    </div>
+    <div class="h-8"></div>
+  </section>
+
+</body>
+</html>

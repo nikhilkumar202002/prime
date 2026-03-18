@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.glass {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  backdrop-filter: blur(18px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.glass-border {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.dot::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.slot-active {
+  background: #000;
+  color: #fff;
+}
+
+.slot-inactive {
+  background: #fff;
+  color: #000;
+}
+
+.time-slot {
+  transition: background 0.2s, color 0.2s;
+}
+
+.time-slot.selected {
+  background: #000;
+  color: #fff;
+}
+
+.time-slot:not(.selected) {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.time-slot:not(.selected):hover {
+  background: #cff9ff;
+}
+
+.star-icon {
+  color: #604b9e;
+  font-size: inherit;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.card-grey {
+  background: rgba(217, 218, 219, 0.5);
+}
+
+.img-mosaic {
+  position: relative;
+  width: 100%;
+  padding-top: 61.18%;
+}
+
+.img-mosaic .main-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 66.4%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.img-mosaic .top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32.12%;
+  height: 50.09%;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.img-mosaic .bottom-right {
+  position: absolute;
+  top: 52.5%;
+  right: 0;
+  width: 43.25%;
+  height: 47.5%;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.img-mosaic .top-right img,
+.img-mosaic .bottom-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
