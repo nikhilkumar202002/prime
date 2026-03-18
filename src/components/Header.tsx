@@ -28,7 +28,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
     const lifestyleItems = [
       { title: "Multi-Brand Retail Store", img: "/images/forever-innerpage-slider.jpeg", href: "/vendor" },
-      { title: "Café", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/b5/ea/50/je-bent-jezelf-niet-als.jpg?w=900&h=500&s=1", href: "/vendor#cafe" },
+      { title: "Café", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/b5/ea/50/je-bent-jezelf-niet-als.jpg?w=900&h=500&s=1", href: "/cafe" },
       { title: "Gaming Arcade", img: "https://i.etsystatic.com/23665971/r/il/4bcce4/3445693810/il_fullxfull.3445693810_m4vj.jpg", href: "/vendor#arcade" },
     ];
 

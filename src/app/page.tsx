@@ -233,7 +233,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {/* Corporate Offices */}
-          <div className="bg-black/10 rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+          <div className="bg-black/10 rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
             <img src="/images/bac6647dead1dcf8796d89548ad0d9030750c703.png" alt="" className="w-12 h-12 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Corporate Offices</p>
@@ -242,7 +242,7 @@ export default function HomePage() {
           </div>
 
           {/* Wellness Brands */}
-          <div className="bg-[#e1ff83] rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+          <div className="bg-[#e1ff83] rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
             <img src="/images/609ac97b47e7ccf533a83e1838d32ea943c24c1f.png" alt="" className="w-11 h-11 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Wellness Brands</p>
@@ -251,7 +251,7 @@ export default function HomePage() {
           </div>
 
           {/* Event Organisers */}
-          <div className="bg-black rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+          <div className="bg-black rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
             <img src="/images/e9d0d569b260a460f66a5cd0f6436acd3100e83d.png" alt="" className="w-12 h-12 object-contain" />
             <div>
               <p className="text-xl font-medium text-white leading-tight mb-2">Event Organisers</p>
@@ -260,7 +260,7 @@ export default function HomePage() {
           </div>
 
           {/* Health-Conscious Individuals */}
-          <div className="bg-[#e1ff83] rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+          <div className="bg-[#e1ff83] rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
             <img src="/images/79d71fe981328cf24207baf0ab5d971401991dbc.png" alt="" className="w-12 h-12 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Health-Conscious Individuals</p>
@@ -269,7 +269,7 @@ export default function HomePage() {
           </div>
 
           {/* Lifestyle Seekers */}
-          <div className="bg-black/10 rounded-[20px] p-6 h-[280px] flex flex-col justify-between">
+          <div className="bg-black/10 rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
             <img src="/images/456f2242cc66315851ca48ea1151bed122a71508.png" alt="" className="w-12 h-12 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Lifestyle Seekers</p>

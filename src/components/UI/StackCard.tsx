@@ -26,8 +26,8 @@ export default function StackCard() {
         <GsapStack selector="#stack-panels .stack-panel" />
 
         {/* Panel 1: Aqua & Wellness — visible from start */}
-        <div className="stack-panel absolute inset-0 rounded-[30px] overflow-hidden">
-          <img src="/images/swim.webp" alt="Aqua & Wellness" className="absolute inset-0 w-full h-screen object-cover" />
+        <div className="stack-panel absolute inset-0 rounded-[30px] overflow-hidden bg-black">
+          <img src="/images/swim.webp" alt="Aqua & Wellness" loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(211.6deg, rgba(0,0,0,0) 59.5%, rgba(0,0,0,0.8) 83.3%)" }}></div>
           <div className="absolute bottom-14 left-10 right-10 lg:left-14 lg:right-14 lg:bottom-25 text-white px-10 lg:px-20 py-8">
             <div className="flex items-center gap-3 mb-4 text-lg opacity-90">
@@ -42,8 +42,8 @@ export default function StackCard() {
         </div>
 
         {/* Panel 2: Retail & Corporate — starts below, slides up on scroll */}
-        <div className="stack-panel absolute inset-0 rounded-[20px] overflow-hidden">
-          <img src="/images/hall.webp" alt="Retail & Corporate" className="absolute inset-0 w-full h-screen object-cover" />
+        <div className="stack-panel absolute inset-0 rounded-[20px] overflow-hidden bg-black">
+          <img src="/images/hall.webp" alt="Retail & Corporate" loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(130.7deg, rgba(0,0,0,0) 50.5%, rgba(0,0,0,0.357) 60.5%, rgba(0,0,0,0.8) 93.1%)" }}></div>
           <div className="absolute bottom-14 right-10 lg:right-14 text-white text-right px-10 lg:px-20">
             <div className="flex items-center justify-end gap-3 mb-4 text-lg opacity-90">
@@ -58,8 +58,8 @@ export default function StackCard() {
         </div>
 
         {/* Panel 3: Fitness & Sports — starts below, slides up on scroll */}
-        <div className="stack-panel absolute inset-0 rounded-[20px] overflow-hidden">
-          <img src="/images/gym.webp" alt="Fitness & Sports" className="absolute inset-0 w-full h-screen object-cover" />
+        <div className="stack-panel absolute inset-0 rounded-[20px] overflow-hidden bg-black">
+          <img src="/images/gym.webp" alt="Fitness & Sports" loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(43.5deg, rgba(0,0,0,0.8) 6.5%, rgba(0,0,0,0.49) 24.6%, rgba(0,0,0,0) 40.5%)" }}></div>
           <div className="absolute bottom-14 left-10 lg:left-14 text-white px-10 lg:px-20 py-8">
             <div className="flex items-center gap-3 mb-4 text-lg opacity-90">
