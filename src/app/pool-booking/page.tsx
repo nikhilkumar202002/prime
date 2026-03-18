@@ -1,4 +1,5 @@
 import PoolTimeSlots from "@/components/PoolTimeSlots";
+import Image from "next/image";
 
 export const metadata = { title: "Aqua & Wellness – Prime Promenade" };
 
@@ -10,7 +11,7 @@ export default function PoolBookingPage() {
       {/* ═══ HERO ═══ */}
       <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
         <img
-          src="/images/0cce7ec7399a58cf00e27971a184a541e59c5e59.png"
+          src="/SWIMMING/banner-1.jpg"
           alt="Pool"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -92,9 +93,9 @@ export default function PoolBookingPage() {
             </div>
             <div className="flex items-center gap-4 mb-8 pr-28 lg:pr-36">
               <div className="relative w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] flex-shrink-0">
-                <img src="/images/d44ee2ded83af194d3ce4ea50f1f037a72a94d71.svg" alt="" className="w-full h-full" />
+                <img src="/SWIMMING/gallery-3.jpg" alt="" className="w-full h-full" />
                 <img
-                  src="/images/1a5804af0c9e8dae9094509b3ccfe73c26e24c12.png"
+                  src="/SWIMMING/gallery-1.jpg"
                   alt=""
                   className="absolute w-[38px] h-[38px] lg:w-[42px] lg:h-[42px] object-contain"
                   style={{ top: "50%", left: "50%", transform: "translate(-50%,-50%)", filter: "invert(1)" }}
@@ -107,19 +108,19 @@ export default function PoolBookingPage() {
             </div>
             <ul className="flex flex-col gap-4 mb-8">
               <li className="flex items-center gap-3">
-                <img src="/images/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
+                <img src="/SWIMMING/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
                 <span className="text-[18px] text-black">Heated infinity pool</span>
               </li>
               <li className="flex items-center gap-3">
-                <img src="/images/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
+                <img src="/SWIMMING/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
                 <span className="text-[18px] text-black">Poolside bar access</span>
               </li>
               <li className="flex items-center gap-3">
-                <img src="/images/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
+                <img src="/SWIMMING/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
                 <span className="text-[18px] text-black">DJ lounge area</span>
               </li>
               <li className="flex items-center gap-3">
-                <img src="/images/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
+                <img src="/SWIMMING/ebb603ce3968477d5506e38d6d3e4c6781dcd328.svg" alt="" className="w-8 h-8 flex-shrink-0" />
                 <span className="text-[18px] text-black">Group seating pods</span>
               </li>
             </ul>
@@ -254,26 +255,26 @@ export default function PoolBookingPage() {
         </div>
         {/* Gallery Row 1: large left + smaller right */}
         <div className="grid grid-cols-1 lg:grid-cols-[5fr_3fr] gap-4 mb-4">
-          <div className="rounded-[20px] overflow-hidden" style={{ height: "clamp(260px,35vw,484px)" }}>
-            <img src="/images/b74d38b509b135dfc2991ec1a6bb6b0ae84ee261.png" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-[20px] overflow-hidden" style={{ height: "clamp(260px,35vw,484px)" }}>
+            <Image src="/SWIMMING/gallery-3.jpg" alt="Gallery 1" fill className="object-cover" />
           </div>
-          <div className="rounded-[20px] overflow-hidden" style={{ height: "clamp(260px,35vw,484px)" }}>
-            <img src="/images/524f21e64027dd559993312efffc2d798817cea7.png" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-[20px] overflow-hidden" style={{ height: "clamp(260px,35vw,484px)" }}>
+            <Image src="/SWIMMING/gallery2.jpg" alt="Gallery 2" fill className="object-cover" />
           </div>
         </div>
         {/* Gallery Row 2: 4 equal */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
-            <img src="/images/13b6bcb80565de8c91d810eed096c7985b4ba287.png" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
+            <Image src="/SWIMMING/gallery5.jpg" alt="Gallery 3" fill className="object-cover" />
           </div>
-          <div className="rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
-            <img src="/images/bf147758b9b62dc7221ca828e3bf84c480cdaf3b.png" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
+            <Image src="/SWIMMING/gallery-1.jpg" alt="Gallery 4" fill className="object-cover" />
           </div>
-          <div className="rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
-            <img src="/images/1397cb5ae897b16401e936cfef9e3daa5acf856d.png" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
+            <Image src="/SWIMMING/gallery-6.jpg" alt="Gallery 5" fill className="object-cover" />
           </div>
-          <div className="rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
-            <img src="/images/40875f226bc6b281ed989c8c9dd353cd10326106.png" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-[20px] overflow-hidden" style={{ height: "clamp(180px,20vw,484px)" }}>
+            <Image src="/SWIMMING/gallery-7.jpg" alt="Gallery 6" fill className="object-cover" />
           </div>
         </div>
       </section>

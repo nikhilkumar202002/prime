@@ -7,22 +7,28 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "About us", href: "/about" },
-  { label: "Media", href: "/media" },
+  { label: "Multipurpose Hall", href: "/conference" },
   { label: "Events", href: "/conference" },
 ];
 
 const dotLinks = [
   { label: "Education", href: "/study-centre" },
-  { label: "Lifestyle & Fun", href: "/lifestyle" },
+  { label: "Lifestyle & Fun", href: "/vendor" },
   { label: "Wellness & Fitness", href: "/wellness", hasMega: true },
 ];
 
 const wellnessItems = [
-  { title: "Gym", img: "/images/gym.webp", href: "/gym" },
+  { title: "Oxy Gym", img: "/images/gym.webp", href: "/gym" },
   { title: "Swimming Pool", img: "/images/swim.webp", href: "/pool-booking" },
   { title: "Spa & Salon", img: "/images/gim_slider.jpg.jpeg", href: "/spa" },
   { title: "Pharmacy", img: "/images/hall.webp", href: "/pharmacy" },
   { title: "Diet & Diabetic..", img: "/images/7adf76efdedce63095cbc41318e882376e7b15ba.png", href: "/pharmacy" },
+];
+
+const lifestyleItems = [
+  { title: "Multi-Brand Retail Store", img: "/images/shop.webp", href: "/vendor" },
+  { title: "Café", img: "/images/cafe.webp", href: "/vendor#cafe" },
+  { title: "Gaming Arcade", img: "/images/arcade.webp", href: "/vendor#arcade" },
 ];
 
 export default function Header() {
@@ -107,7 +113,35 @@ export default function Header() {
                           ))}
                         </div>
 
-                
+                      </motion.div>
+                    )}
+
+                    {hoveredLink === "Lifestyle & Fun" && (
+                      <motion.div
+                        layout
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -10 }}
+                        transition={{ layout: { duration: 0.22 }, type: "spring", stiffness: 300, damping: 28 }}
+                        className="flex flex-col gap-8 pr-12 border-r border-white/30 min-w-[600px] justify-start self-start mb-[-50px]"
+                      >
+                        <h2 className="text-white text-[32px] font-semi mb-[-20px]">Lifestyle & Fun</h2>
+                        <div className="grid grid-cols-3 gap-5">
+                          {lifestyleItems.map((item) => (
+                            <Link key={item.title} href={item.href} className="group block">
+                              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-3 border border-white/10">
+                                <Image
+                                  src={item.img}
+                                  alt={item.title}
+                                  fill
+                                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                              </div>
+                              <p className="text-white font-light text-[18px]">{item.title}</p>
+                            </Link>
+                          ))}
+                        </div>
+
                       </motion.div>
                     )}
                   </AnimatePresence>
