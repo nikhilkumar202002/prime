@@ -49,16 +49,22 @@ const ServiceCarousel = () => {
     <section className="py-16 lg:py-24 overflow-hidden bg-white select-none">
       <div className="relative px-8 lg:px-16 xl:px-32">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-14 pr-8 lg:pr-16 xl:pr-32">
-        <MotionH2 className="flex-1 text-4xl lg:text-[56px] font-medium leading-[1.1] tracking-tight text-black">
-          Amenities Crafted for <br /> an Elevated Lifestyle
-        </MotionH2>
-        <MotionP className="text-lg text-black/60 max-w-md lg:pt-4">
-          An expertly curated collection of fitness, wellness, corporate, and lifestyle amenities—designed to inspire performance, relaxation, and meaningful experiences in one seamless destination.
-        </MotionP>
-      </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-2 h-2 rounded-full bg-black/80 inline-block" />
+              <span className="text-sm text-black/70">World-Class</span>
+            </div>
+            <MotionH2 className="text-4xl lg:text-[56px] font-medium leading-[1.1] tracking-tight text-black">
+              Amenities Crafted for <br /> an Elevated Lifestyle
+            </MotionH2>
+          </div>
+          <MotionP className="text-lg text-black/60 max-w-md lg:pt-4">
+            An expertly curated collection of fitness, wellness, corporate, and lifestyle amenities—designed to inspire performance, relaxation, and meaningful experiences in one seamless destination.
+          </MotionP>
+        </div>
 
       <div className="group">
-        <div className="relative h-[480px]">
+        <div className="relative h-[520px]">
         <motion.div
           className="flex gap-5"
           animate={{ x: -(scrollIndex * cardWidth) }}
