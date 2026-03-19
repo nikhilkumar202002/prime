@@ -1,4 +1,5 @@
-import Image from "next/image";
+'use client'
+
 import AnimatedText from "@/components/AnimatedText";
 import { MotionSpan, MotionH2, MotionP, MotionDiv } from "@/components/MotionWrappers";
 import StackCard from "@/components/UI/StackCard";
@@ -294,7 +295,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-20">
           {/* Left: sub-grid */}
           <div className="grid grid-cols-[1.46fr_1fr] gap-5">
             <div className="relative rounded-[20px] overflow-hidden" style={{ height: 643 }}>
@@ -322,29 +323,29 @@ export default function HomePage() {
           </div>
 
           {/* Right: event list */}
-          <div className="flex flex-col divide-y divide-black/10">
-            <div className="flex items-start justify-between py-8 gap-6">
+          <div className="flex flex-col justify-end">
+            <div className="flex items-start justify-between py-8 gap-6 border-t border-black/10 first:border-t-0">
               <div className="flex flex-col gap-3">
                 <p className="text-2xl lg:text-[30px] font-medium leading-[1.2]">Launch Events</p>
                 <p className="text-lg lg:text-xl text-black/70">Grand openings and product launches in premium venues</p>
               </div>
               <p className="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">01</p>
             </div>
-            <div className="flex items-start justify-between py-8 gap-6">
+            <div className="flex items-start justify-between py-8 gap-6 border-t border-black/10 first:border-t-0">
               <div className="flex flex-col gap-3">
                 <p className="text-2xl lg:text-[30px] font-medium leading-[1.2]">Fitness Workshops</p>
                 <p className="text-lg lg:text-xl text-black/70">Expert-led training sessions and wellness seminars</p>
               </div>
               <p className="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">02</p>
             </div>
-            <div className="flex items-start justify-between py-8 gap-6">
+            <div className="flex items-start justify-between py-8 gap-6 border-t border-black/10 first:border-t-0">
               <div className="flex flex-col gap-3">
                 <p className="text-2xl lg:text-[30px] font-medium leading-[1.2]">Corporate Open Houses</p>
                 <p className="text-lg lg:text-xl text-black/70">Networking events in world-class conference facilities</p>
               </div>
               <p className="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">03</p>
             </div>
-            <div className="flex items-start justify-between py-8 gap-6">
+            <div className="flex items-start justify-between py-8 gap-6 border-t border-black/10 first:border-t-0">
               <div className="flex flex-col gap-3">
                 <p className="text-2xl lg:text-[30px] font-medium leading-[1.2]">Business Networking</p>
                 <p className="text-lg lg:text-xl text-black/70">Curated connections between brands and professionals</p>
@@ -355,7 +356,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section removed from this page; Footer in layout will render globally */}
     </main>
   );
 }

@@ -46,17 +46,19 @@ const ServiceCarousel = () => {
   };
 
   return (
-    <section className="py-16 lg:py-24 pl-8 lg:pl-16 xl:pl-32 overflow-hidden bg-white select-none">
-      <div className="grid lg:grid-cols-2 gap-10 mb-14 pr-8 lg:pr-16 xl:pr-32">
-        <MotionH2 className="text-4xl lg:text-[56px] font-medium leading-[1.1] tracking-tight text-black">
+    <section className="py-16 lg:py-24 overflow-hidden bg-white select-none">
+      <div className="relative px-8 lg:px-16 xl:px-32">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-14 pr-8 lg:pr-16 xl:pr-32">
+        <MotionH2 className="flex-1 text-4xl lg:text-[56px] font-medium leading-[1.1] tracking-tight text-black">
           Amenities Crafted for <br /> an Elevated Lifestyle
         </MotionH2>
         <MotionP className="text-lg text-black/60 max-w-md lg:pt-4">
-          An expertly curated collection of fitness, wellness, corporate, and lifestyle amenities.
+          An expertly curated collection of fitness, wellness, corporate, and lifestyle amenities—designed to inspire performance, relaxation, and meaningful experiences in one seamless destination.
         </MotionP>
       </div>
 
-      <div className="relative group">
+      <div className="group">
+        <div className="relative h-[480px]">
         <motion.div
           className="flex gap-5"
           animate={{ x: -(scrollIndex * cardWidth) }}
@@ -96,21 +98,30 @@ const ServiceCarousel = () => {
           ))}
         </motion.div>
 
-        {/* Floating Glass Navigation */}
-        <div className="absolute top-1/2 -translate-y-1/2 right-10 flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
+        </div>
+
+        {/* Floating Glass Navigation - left */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-8 lg:left-16 xl:left-32 flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
           <button
             onClick={prevSlide}
+            aria-label="Previous"
             className="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95 shadow-2xl"
           >
             <ChevronLeft size={28} />
           </button>
+        </div>
+
+        {/* Floating Glass Navigation - right */}
+        <div className="absolute top-1/2 -translate-y-1/2 right-8 lg:right-16 xl:right-32 flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0 z-20">
           <button
             onClick={nextSlide}
+            aria-label="Next"
             className="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95 shadow-2xl"
           >
             <ChevronRight size={28} />
           </button>
         </div>
+      </div>
       </div>
 
       <style jsx global>{`
