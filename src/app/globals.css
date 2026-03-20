@@ -6,6 +6,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Hide scrollbars utility used by mobile carousels */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
 .glass {
   backdrop-filter: blur(18px);
   background: rgba(255, 255, 255, 0.2);
@@ -121,6 +125,8 @@ body {
   .site-container {
     padding-left: 17px;
     padding-right: 17px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @screen md {
@@ -131,6 +137,7 @@ body {
   }
 
   @screen lg {
+    /* Desktop horizontal container padding (95px) */
     .site-container {
       padding-left: 95px;
       padding-right: 95px;

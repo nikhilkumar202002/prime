@@ -9,17 +9,17 @@ export default function HomePage() {
   return (
     <main className="bg-white text-black overflow-x-hidden">
       {/* Hero */}
-      <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
+      <section className="relative w-full h-screen min-h-[520px] md:min-h-[600px] overflow-hidden">
         <video autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover">
           <source src="/videos/0_Shopping_Mall_Luxury_3840x2160.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
-        <div className="relative h-full flex flex-col justify-end pb-20 px-8 lg:px-16">
+        <div className="relative h-full flex flex-col justify-end pb-12 md:pb-20 site-container">
           <div className="grid lg:grid-cols-2 gap-10 items-end">
             <AnimatedText
               as="h1"
               lines={["Prime Promenade.", "Many Experiences."]}
-              className="text-white text-4xl sm:text-5xl lg:text-7xl xl:text-[84px] font-normal leading-[1.1] tracking-[-0.02em]"
+              className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-[84px] font-normal leading-[1.1] tracking-[-0.02em]"
               delay={0.15}
               stagger={0.06}
             />
@@ -32,9 +32,9 @@ export default function HomePage() {
               <p className="text-white text-lg lg:text-xl leading-relaxed max-w-md lg:text-right">
                 A premium four-floor lifestyle destination seamlessly blending fitness, wellness, business, and modern luxury experiences.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="glass rounded-full px-8 py-4 text-white text-lg capitalize hover:bg-white/30 transition-colors">Explore Amenities</button>
-                <button className="glass rounded-full px-8 py-4 text-white text-lg capitalize hover:bg-white/30 transition-colors">Partner With Us</button>
+                <div className="flex flex-wrap gap-4">
+                <button className="glass rounded-full px-6 py-3 text-white text-base sm:text-lg capitalize hover:bg-white/30 transition-colors">Explore Amenities</button>
+                <button className="glass rounded-full px-6 py-3 text-white text-base sm:text-lg capitalize hover:bg-white/30 transition-colors">Partner With Us</button>
               </div>
             </MotionDiv>
           </div>
@@ -42,7 +42,7 @@ export default function HomePage() {
       </section>
 
       {/* Four Floors of Unmatched Excellence */}
-      <section className="py-20 lg:py-28 px-8 lg:px-16 xl:px-32">
+      <section className="py-20 lg:py-28 site-container">
         <div className="flex items-center gap-3 mb-6 justify-center">
           <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
           <MotionSpan
@@ -88,7 +88,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 rounded-[24px]"></div>
             <div className="absolute bottom-8 left-8 text-white">
               <p className="text-[25px] font-medium leading-tight mb-3">Elevating Lifestyle, Under One Roof</p>
-              <p className="text-base opacity-90 leading-relaxed tracking-tight w-[70%]">A thoughtfully planned four-floor destination where luxury architecture meets purposeful design—crafted to elevate fitness, wellness, business, and lifestyle experiences under one iconic roof.</p>
+              <p className="hidden lg:block text-base opacity-90 leading-relaxed tracking-tight w-[70%]">A thoughtfully planned four-floor destination where luxury architecture meets purposeful design—crafted to elevate fitness, wellness, business, and lifestyle experiences under one iconic roof.</p>
             </div>
           </MotionDiv>
 
@@ -149,8 +149,8 @@ export default function HomePage() {
 
 
       {/* Transform Your Body */}
-      <section className="relative bg-[black] mx-4 lg:mx-10 rounded-[20px] overflow-hidden pt-16 lg:pt-20 pb-10 lg:pb-12 px-8 lg:px-16 mb-6">
-        <div className="flex justify-between mb-10">
+      <section className="relative bg-black rounded-[20px] overflow-hidden pt-10 md:pt-14 pb-8 md:pb-10 site-container mb-6 ">
+        <div className="flex flex-col md:flex-row justify-between mb-8 md:mb-10">
           <MotionDiv
             className=""
             initial={{ opacity: 0, y: 12 }}
@@ -164,7 +164,7 @@ export default function HomePage() {
                 <span className="text-xl">Fitness &amp; Wellness</span>
               </div>
               <MotionH2
-                className="text-4xl sm:text-5xl lg:text-[60px] font-normal text-white leading-[1.2]"
+                className="text-3xl sm:text-4xl lg:text-[60px] font-normal text-white leading-[1.15] lg:leading-[1.05]"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.35 }}
@@ -176,13 +176,13 @@ export default function HomePage() {
           </MotionDiv>
 
           <MotionDiv
-            className="lg:flex lg:items-end lg:pb-2"
+            className="lg:flex lg:items-end lg:pb-2 mt-6 md:mt-0"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.25 }}
             transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <MotionP className="text-lg text-white/70 leading-relaxed max-w-md" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.14, duration: 0.6 }}>
+            <MotionP className="text-base md:text-lg text-white/70 leading-relaxed max-w-full md:max-w-md" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.14, duration: 0.6 }}>
               Our Platinum membership unlocks an unparalleled fitness journey — from world-class equipment and private pool sessions to curated nutrition and spa recovery.
             </MotionP>
           </MotionDiv>
@@ -191,14 +191,14 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-2 gap-5">
           {/* Feature list */}
           <MotionDiv
-            className="bg-[#161616] rounded-[20px] px-10 lg:px-14 py-12 lg:py-14 flex items-center"
+            className="bg-[#161616] rounded-[20px] px-6 md:px-10 lg:px-14 py-8 md:py-12 flex items-center"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.25 }}
             transition={{ delay: 0.12, duration: 0.65, ease: "easeOut" }}
           >
             <ul className="flex flex-col gap-5 w-full">
-              <li className="flex items-center gap-4 text-white text-lg">
+              <li className="flex items-center gap-4 text-white text-base md:text-lg">
                 <img src="/images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="" className="w-7 h-7 flex-shrink-0 object-contain" />
                 Imported gym equipment from global brands
               </li>
@@ -227,7 +227,7 @@ export default function HomePage() {
 
           {/* Gym image with membership card */}
           <MotionDiv
-            className="relative h-[480px] lg:h-[596px] rounded-[20px] overflow-hidden"
+            className="relative h-[480px] md:h-[480px] lg:h-[596px] rounded-[20px] overflow-hidden"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.25 }}
@@ -256,7 +256,7 @@ export default function HomePage() {
       </section>
 
       {/* Built for Visionaries */}
-      <section className="py-20 lg:py-28 px-8 lg:px-16 xl:px-32">
+      <section className="py-20 lg:py-28 site-container">
         <div className="flex items-center gap-3 mb-6 justify-center">
           <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
           <MotionSpan
@@ -363,7 +363,7 @@ export default function HomePage() {
       </section>
 
       {/* Where Experiences Spark Connections */}
-      <section className="py-16 lg:py-24 px-8 lg:px-16 xl:px-32">
+      <section className="py-12 lg:py-24 site-container">
         <MotionDiv
           className="flex items-center gap-3 mb-6"
           initial={{ opacity: 0, y: 8 }}
@@ -375,9 +375,9 @@ export default function HomePage() {
           <MotionSpan className="text-xl">Experiences</MotionSpan>
         </MotionDiv>
 
-        <div className="flex justify-between items-center gap-10 mb-14">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10 mb-10 md:mb-14">
           <MotionH2
-            className="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.15] w-[62%]"
+            className="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.15] w-full md:w-[62%]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.35 }}
@@ -386,7 +386,7 @@ export default function HomePage() {
             Where Experiences Spark Connections
           </MotionH2>
           <MotionP
-            className="text-lg lg:text-xl leading-relaxed text-black/80 lg:pt-0 w-[36%]"
+            className="text-lg lg:text-xl leading-relaxed text-black/80 mt-4 md:mt-0 w-full md:w-[36%]"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
@@ -396,21 +396,21 @@ export default function HomePage() {
           </MotionP>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20">
           {/* Left: sub-grid */}
           <MotionDiv
-            className="grid grid-cols-[1.46fr_1fr] gap-5"
+            className="grid grid-cols-1 md:grid-cols-[1.46fr_1fr] gap-5"
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.25 }}
             transition={{ delay: 0.12, duration: 0.65, ease: "easeOut" }}
           >
-            <div className="relative rounded-[20px] overflow-hidden" style={{ height: 643 }}>
+            <div className="relative rounded-[20px] overflow-hidden h-[260px] md:h-[643px]">
               <img src="/images/3fa0c2858a9883222e6043946c0974f99572a294.png" alt="Events" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col gap-5">
               {/* Lime stat card */}
-              <div className="bg-[#e1ff83] rounded-[20px] p-7 flex flex-col justify-between" style={{ height: 243 }}>
+              <div className="bg-[#e1ff83] rounded-[20px] p-7 flex flex-col justify-between h-[200px] md:h-[243px]">
                 <div>
                   <p className="text-[50px] font-normal leading-none tracking-[-0.04em]">1,000+</p>
                   <p className="text-xl font-semibold mt-1">Happy Clients</p>

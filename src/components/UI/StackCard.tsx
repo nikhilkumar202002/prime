@@ -23,7 +23,7 @@ export default function StackCard() {
         GSAP pins it here while cards slide up from below one by one.
         Panel 1 is visible; panels 2 & 3 start translated 100% off-screen below.
       */}
-      <div id="stack-panels" className="relative h-screen overflow-hidden">
+      <div id="stack-panels" className="relative h-screen overflow-hidden hidden lg:block">
         <GsapStack selector="#stack-panels .stack-panel" />
 
         {/* Panel 1: Aqua & Wellness — visible from start */}
@@ -71,6 +71,48 @@ export default function StackCard() {
             <motion.p initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ delay: 0.12, duration: 0.6, ease: 'easeOut' }} className="text-lg lg:text-xl max-w-md leading-relaxed opacity-90">
               Your comeback starts here
             </motion.p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile fallback: simple div-by-div stacked panels for small screens */}
+      <div className="lg:hidden flex flex-col gap-6">
+        <div className="relative rounded-[20px] overflow-hidden h-[360px]">
+          <img src="/images/swim.webp" alt="Aqua & Wellness" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 text-white">
+            <div className="flex items-center gap-3 mb-2 text-sm opacity-90">
+              <span className="w-2.5 h-2.5 rounded-full bg-white inline-block" />
+              Ground Floor
+            </div>
+            <h3 className="text-2xl font-medium mb-2">Hideaway Swisuites</h3>
+            <p className="text-base opacity-90">Enjoy Indoor pool with the Comfort.</p>
+          </div>
+        </div>
+
+        <div className="relative rounded-[20px] overflow-hidden h-[360px]">
+          <img src="/images/hall.webp" alt="Retail & Corporate" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 text-white">
+            <div className="flex items-center gap-3 mb-2 text-sm opacity-90">
+              <span className="w-2.5 h-2.5 rounded-full bg-white inline-block" />
+              First &amp; Second Floor
+            </div>
+            <h3 className="text-2xl font-medium mb-2">The Regal at the Promenade</h3>
+            <p className="text-base opacity-90">A timeless event destination crafted for elegant gatherings, and unforgettable moments.</p>
+          </div>
+        </div>
+
+        <div className="relative rounded-[20px] overflow-hidden h-[360px]">
+          <img src="/images/gym.webp" alt="Fitness & Sports" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 text-white">
+            <div className="flex items-center gap-3 mb-2 text-sm opacity-90">
+              <span className="w-2.5 h-2.5 rounded-full bg-white inline-block" />
+              Third &amp; Fourth Floor
+            </div>
+            <h3 className="text-2xl font-medium mb-2">Oxy Gym</h3>
+            <p className="text-base opacity-90">Your comeback starts here</p>
           </div>
         </div>
       </div>

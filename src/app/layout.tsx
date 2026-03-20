@@ -23,7 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    // `suppressHydrationWarning` prevents React from logging mismatches
+    // caused by browser extensions or client-only DOM mutations before
+    // hydration. Prefer debugging extensions first (incognito), then
+    // keep this if the warning is benign.
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${poppins.variable} font-poppins bg-white text-black overflow-x-hidden`}
       >
