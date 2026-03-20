@@ -115,3 +115,25 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* Site container padding utility: mobile 17px, tablet 50px, desktop 95px */
+@layer components {
+  .site-container {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  @screen md {
+    .site-container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  @screen lg {
+    .site-container {
+      padding-left: 95px;
+      padding-right: 95px;
+    }
+  }
+}

@@ -149,27 +149,54 @@ export default function HomePage() {
 
 
       {/* Transform Your Body */}
-      <section className="relative bg-[#0e0e0e] mx-4 lg:mx-10 rounded-[20px] overflow-hidden pt-16 lg:pt-20 pb-10 lg:pb-12 px-8 lg:px-16 mb-6">
-        <div className="grid lg:grid-cols-2 gap-10 mb-10">
-          <div>
-            <div className="flex items-center gap-3 mb-6 text-white">
-              <span className="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
-              <span className="text-xl">Fitness &amp; Wellness</span>
+      <section className="relative bg-[black] mx-4 lg:mx-10 rounded-[20px] overflow-hidden pt-16 lg:pt-20 pb-10 lg:pb-12 px-8 lg:px-16 mb-6">
+        <div className="flex justify-between mb-10">
+          <MotionDiv
+            className=""
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <div>
+              <div className="flex items-center gap-3 mb-6 text-white">
+                <span className="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
+                <span className="text-xl">Fitness &amp; Wellness</span>
+              </div>
+              <MotionH2
+                className="text-4xl sm:text-5xl lg:text-[60px] font-normal text-white leading-[1.2]"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.35 }}
+                transition={{ delay: 0.06, duration: 0.7, ease: "easeOut" }}
+              >
+                Transform Your Body.<br />Elevate Your Life.
+              </MotionH2>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-[60px] font-normal text-white leading-[1.2]">
-              Transform Your Body.<br />Elevate Your Life.
-            </h2>
-          </div>
-          <div className="lg:flex lg:items-end lg:pb-2">
-            <p className="text-lg text-white/70 leading-relaxed max-w-md">
+          </MotionDiv>
+
+          <MotionDiv
+            className="lg:flex lg:items-end lg:pb-2"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.25 }}
+            transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
+          >
+            <MotionP className="text-lg text-white/70 leading-relaxed max-w-md" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.14, duration: 0.6 }}>
               Our Platinum membership unlocks an unparalleled fitness journey — from world-class equipment and private pool sessions to curated nutrition and spa recovery.
-            </p>
-          </div>
+            </MotionP>
+          </MotionDiv>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-5">
           {/* Feature list */}
-          <div className="bg-[#161616] rounded-[20px] px-10 lg:px-14 py-12 lg:py-14 flex items-center">
+          <MotionDiv
+            className="bg-[#161616] rounded-[20px] px-10 lg:px-14 py-12 lg:py-14 flex items-center"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.25 }}
+            transition={{ delay: 0.12, duration: 0.65, ease: "easeOut" }}
+          >
             <ul className="flex flex-col gap-5 w-full">
               <li className="flex items-center gap-4 text-white text-lg">
                 <img src="/images/538e67c6c0ed7721511ee5942dd82a348b8901fe.svg" alt="" className="w-7 h-7 flex-shrink-0 object-contain" />
@@ -196,10 +223,16 @@ export default function HomePage() {
                 Luxury spa &amp; holistic recovery zones
               </li>
             </ul>
-          </div>
+          </MotionDiv>
 
           {/* Gym image with membership card */}
-          <div className="relative h-[480px] lg:h-[596px] rounded-[20px] overflow-hidden">
+          <MotionDiv
+            className="relative h-[480px] lg:h-[596px] rounded-[20px] overflow-hidden"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.25 }}
+            transition={{ delay: 0.16, duration: 0.65, ease: "easeOut" }}
+          >
             <img src="/images/060cc9853c06cfa47f94502c8517d564c50ff930.png" alt="Fitness" className="w-full h-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center p-10">
               <div className="relative rounded-[20px] overflow-hidden w-full max-w-[380px]">
@@ -218,7 +251,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -226,78 +259,152 @@ export default function HomePage() {
       <section className="py-20 lg:py-28 px-8 lg:px-16 xl:px-32">
         <div className="flex items-center gap-3 mb-6 justify-center">
           <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
-          <span className="text-xl">Who It&apos;s For</span>
+          <MotionSpan
+            className="text-xl"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ delay: 0.05, duration: 0.6 }}
+          >
+            Who It&apos;s For
+          </MotionSpan>
         </div>
-        <h2 className="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2] text-center mb-14">
+        <MotionH2
+          className="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2] text-center mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.35 }}
+          transition={{ delay: 0.12, duration: 0.7, ease: "easeOut" }}
+        >
           Built for Visionaries
-        </h2>
+        </MotionH2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {/* Corporate Offices */}
-          <div className="bg-black/10 rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
+          <MotionDiv
+            className="bg-black/10 rounded-[20px] p-6 h-[420px] flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.12, duration: 0.6 }}
+          >
             <img src="/images/bac6647dead1dcf8796d89548ad0d9030750c703.png" alt="" className="w-12 h-12 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Corporate Offices</p>
               <p className="text-base text-black/70 leading-relaxed tracking-tight">Modern, secure, and scalable spaces designed for forward-thinking businesses and corporate leaders.</p>
             </div>
-          </div>
+          </MotionDiv>
 
           {/* Wellness Brands */}
-          <div className="bg-[#e1ff83] rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
+          <MotionDiv
+            className="bg-[#e1ff83] rounded-[20px] p-6 h-[420px] flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.16, duration: 0.6 }}
+          >
             <img src="/images/609ac97b47e7ccf533a83e1838d32ea943c24c1f.png" alt="" className="w-11 h-11 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Wellness Brands</p>
               <p className="text-base text-black/70 leading-relaxed tracking-tight">A premium platform for wellness, fitness, nutrition, and healthcare brands to thrive and connect.</p>
             </div>
-          </div>
+          </MotionDiv>
 
           {/* Event Organisers */}
-          <div className="bg-black rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
-            <img src="/images/e9d0d569b260a460f66a5cd0f6436acd3100e83d.png" alt="" className="w-12 h-12 object-contain" />
+          <MotionDiv
+            className="bg-black rounded-[20px] p-6 h-[420px] flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <img
+              src="/images/e9d0d569b260a460f66a5cd0f6436acd3100e83d.png"
+              alt=""
+              className="w-12 h-12 object-contain"
+              style={{ filter: 'invert(1) brightness(2) contrast(1.1)' }}
+            />
             <div>
               <p className="text-xl font-medium text-white leading-tight mb-2">Event Organisers</p>
               <p className="text-base text-white/70 leading-relaxed tracking-tight">Fully equipped venues ideal for workshops, launches, seminars, and curated lifestyle events.</p>
             </div>
-          </div>
+          </MotionDiv>
 
           {/* Health-Conscious Individuals */}
-          <div className="bg-[#e1ff83] rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
+          <MotionDiv
+            className="bg-[#e1ff83] rounded-[20px] p-6 h-[420px] flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.24, duration: 0.6 }}
+          >
             <img src="/images/79d71fe981328cf24207baf0ab5d971401991dbc.png" alt="" className="w-12 h-12 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Health-Conscious Individuals</p>
               <p className="text-base text-black/70 leading-relaxed tracking-tight">An elevated environment for fitness, balance, and holistic well-being.</p>
             </div>
-          </div>
+          </MotionDiv>
 
           {/* Lifestyle Seekers */}
-          <div className="bg-black/10 rounded-[20px] p-6 h-[420px] flex flex-col justify-between">
+          <MotionDiv
+            className="bg-black/10 rounded-[20px] p-6 h-[420px] flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.28, duration: 0.6 }}
+          >
             <img src="/images/456f2242cc66315851ca48ea1151bed122a71508.png" alt="" className="w-12 h-12 object-contain" />
             <div>
               <p className="text-xl font-medium text-black leading-tight mb-2">Lifestyle Seekers</p>
               <p className="text-base text-black/70 leading-relaxed tracking-tight">For those who value premium experiences, modern amenities, and a refined way of living.</p>
             </div>
-          </div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* Where Experiences Spark Connections */}
       <section className="py-16 lg:py-24 px-8 lg:px-16 xl:px-32">
-        <div className="flex items-center gap-3 mb-6">
+        <MotionDiv
+          className="flex items-center gap-3 mb-6"
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
-          <span className="text-xl">Experiences</span>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start mb-14">
-          <h2 className="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.2]">
+          <MotionSpan className="text-xl">Experiences</MotionSpan>
+        </MotionDiv>
+
+        <div className="flex justify-between items-center gap-10 mb-14">
+          <MotionH2
+            className="text-4xl sm:text-5xl lg:text-[60px] font-normal leading-[1.15] w-[62%]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.35 }}
+            transition={{ delay: 0.08, duration: 0.7, ease: "easeOut" }}
+          >
             Where Experiences Spark Connections
-          </h2>
-          <p className="text-lg lg:text-xl leading-relaxed text-black/80 lg:pt-4">
+          </MotionH2>
+          <MotionP
+            className="text-lg lg:text-xl leading-relaxed text-black/80 lg:pt-0 w-[36%]"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ delay: 0.14, duration: 0.7, ease: "easeOut" }}
+          >
             A vibrant platform for meaningful connections—bringing together fitness, business, and lifestyle through curated events, workshops, and networking experiences.
-          </p>
+          </MotionP>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20">
           {/* Left: sub-grid */}
-          <div className="grid grid-cols-[1.46fr_1fr] gap-5">
+          <MotionDiv
+            className="grid grid-cols-[1.46fr_1fr] gap-5"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.25 }}
+            transition={{ delay: 0.12, duration: 0.65, ease: "easeOut" }}
+          >
             <div className="relative rounded-[20px] overflow-hidden" style={{ height: 643 }}>
               <img src="/images/3fa0c2858a9883222e6043946c0974f99572a294.png" alt="Events" className="w-full h-full object-cover" />
             </div>
@@ -320,10 +427,16 @@ export default function HomePage() {
                 <img src="/images/a3ddcd321732f87c8a1ced84089f07f10544b498.png" alt="Networking" className="w-full h-full object-cover" />
               </div>
             </div>
-          </div>
+          </MotionDiv>
 
           {/* Right: event list */}
-          <div className="flex flex-col justify-end">
+          <MotionDiv
+            className="flex flex-col justify-end"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.25 }}
+            transition={{ delay: 0.18, duration: 0.65, ease: "easeOut" }}
+          >
             <div className="flex items-start justify-between py-8 gap-6 border-t border-black/10 first:border-t-0">
               <div className="flex flex-col gap-3">
                 <p className="text-2xl lg:text-[30px] font-medium leading-[1.2]">Launch Events</p>
@@ -352,7 +465,7 @@ export default function HomePage() {
               </div>
               <p className="text-4xl lg:text-[48px] font-normal leading-[1.2] text-black flex-shrink-0">04</p>
             </div>
-          </div>
+          </MotionDiv>
         </div>
       </section>
 

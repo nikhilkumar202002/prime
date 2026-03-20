@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/LOGO/FOOTER-LOGO.svg"
+import { FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -11,7 +12,23 @@ export default function Footer() {
           <p className="text-base text-black/60 leading-relaxed">
             A world-class lifestyle destination uniting fitness, wellness, business, and curated experiences under one iconic roof.
           </p>
-          <Image src="/images/461005f0a4b16024c738b9ceeae3cc0efc6a0a94.svg" alt="Social media" width={251} height={26} />
+          <div className="flex items-center gap-4">
+            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors">
+              <FaFacebookF size={20} />
+            </a>
+            <a href="#" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors">
+              <FaYoutube size={20} />
+            </a>
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors">
+              <FaInstagram size={20} />
+            </a>
+            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors">
+              <FaLinkedinIn size={20} />
+            </a>
+            <a href="#" aria-label="X / Twitter" target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors">
+              <FaTwitter size={20} />
+            </a>
+          </div>
         </div>
         <nav className="flex flex-col gap-3 text-center lg:text-right lg:pt-2 w-full lg:w-auto items-center lg:items-end">
           <Link href="/" className="text-lg font-semibold text-black capitalize hover:opacity-60 transition-opacity">Amenities</Link>

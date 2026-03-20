@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -35,25 +35,60 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Prevent background scroll when menu is open
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const logoClass = `block w-[160px] sm:w-[200px] transition-opacity duration-200 ${open ? "opacity-0 pointer-events-none z-40" : "opacity-100 z-[60]"} lg:opacity-100 lg:pointer-events-auto lg:z-[60]`;
+  const menuBtnClass = `flex items-center gap-3 px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full transition-all duration-300 z-[70] relative ${open ? "bg-transparent" : "bg-white/20 backdrop-blur-md border border-white/30"} text-white font-light text-[16px] sm:text-[22px] ${open ? "opacity-0 pointer-events-none" : "opacity-100"} lg:opacity-100 lg:pointer-events-auto`;
+
+  // Framer-motion variants for mobile menu open animation
+  const mobileNavVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { when: "beforeChildren", staggerChildren: 0.06, duration: 0.32 },
+    },
+    exit: { opacity: 0, y: 12, transition: { when: "afterChildren", duration: 0.2 } },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -6 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.24 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -12 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.26 } },
+  };
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 lg:px-16 py-8">
-      <Link href="/" className="z-[60]">
-        <Image src="/images/logosvg.svg" alt="Prime Promenade" width={200} height={50} />
+    <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between site-container py-8">
+      <Link href="/" className={logoClass}>
+        <Image src="/images/logosvg.svg" alt="Prime Promenade" width={200} height={50} className="w-full h-auto" />
       </Link>
 
       <div className="relative">
         {/* Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className={`flex items-center gap-3 px-6 py-2.5 rounded-full transition-all duration-300 z-[70] relative ${
-            open ? "bg-transparent" : "bg-white/20 backdrop-blur-md border border-white/30"
-          } text-white font-light text-[22px]`}
+          className={menuBtnClass}
         >
           <span>Menu</span>
           <div className="grid grid-cols-2 gap-1">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 bg-white rounded-full" />
+              <div key={i} className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full" />
             ))}
           </div>
         </button>
@@ -70,22 +105,22 @@ export default function Header() {
                 exit={{ opacity: 0 }}
               />
 
+              {/* Desktop / large screens (unchanged) */}
               <motion.nav
                 layout
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 28, layout: { duration: 0.25 } }}
-                className="absolute top-[-10px] right-[-10px] z-50 rounded-[30px] pt-24 pb-16 px-12 flex flex-row items-start gap-12 border border-white/20 shadow-2xl"
+                className="hidden lg:flex absolute top-[-10px] right-[-10px] z-50 rounded-[30px] pt-24 pb-16 px-12 flex-row items-start gap-12 border border-white/20 shadow-2xl"
                 style={{
                   background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
                   backdropFilter: "blur(40px)",
                   WebkitBackdropFilter: "blur(40px)",
                 }}
-                // This ensures if the mouse leaves the entire glass panel, we reset the hover state
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                {/* --- Left Side: Mega Menu Content --- */}
+                {/* --- Left Side: Mega Menu Content (desktop) --- */}
                 <motion.div className="relative flex items-start" layout>
                   <AnimatePresence mode="wait">
                     {hoveredLink === "Wellness & Fitness" && (
@@ -148,7 +183,7 @@ export default function Header() {
                   </AnimatePresence>
                 </motion.div>
 
-                {/* --- Right Side: Main Links --- */}
+                {/* --- Right Side: Main Links (desktop) --- */}
                 <motion.div layout className="flex flex-col items-end gap-8 min-w-[260px]">
                   {navLinks.map((link) => (
                     <Link
@@ -195,6 +230,86 @@ export default function Header() {
                     </div>
                   ))}
                 </motion.div>
+              </motion.nav>
+
+              {/* Mobile / small screens: full-screen drawer with accordions */}
+              <motion.nav
+                variants={mobileNavVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="lg:hidden fixed inset-0 z-50 bg-black p-6 overflow-hidden"
+              >
+                <motion.div variants={headerVariants} className="flex items-center justify-between mb-6">
+                  <Link href="/" onClick={() => setOpen(false)} className="z-60">
+                    <Image src="/images/logosvg.svg" alt="Prime Promenade" width={160} height={40} />
+                  </Link>
+                  <button
+                    onClick={() => { setOpen(false); setExpanded(null); }}
+                    aria-label="Close menu"
+                    className="text-white text-3xl font-light"
+                  >
+                    ×
+                  </button>
+                </motion.div>
+
+                <motion.ul className="flex flex-col gap-6 overflow-auto" style={{ paddingRight: 8 }}>
+                  {navLinks.map((link) => (
+                    <motion.li key={link.label} variants={itemVariants}>
+                      <Link
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="text-white text-2xl font-medium block"
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.li>
+                  ))}
+
+                  {dotLinks.map((link) => (
+                    <motion.li key={link.label} variants={itemVariants} className="w-full">
+                      {link.hasMega ? (
+                        <div>
+                          <button
+                            onClick={() => setExpanded(expanded === link.label ? null : link.label)}
+                            className="w-full flex items-center justify-between text-white text-2xl font-medium py-3"
+                          >
+                            <span>{link.label}</span>
+                            <span className={`transform transition-transform ${expanded === link.label ? "rotate-45" : "rotate-0"}`}>+</span>
+                          </button>
+
+                          <AnimatePresence>
+                            {expanded === link.label && (
+                              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.22 }} className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {(link.label === "Wellness & Fitness" ? wellnessItems : lifestyleItems).map((item) => (
+                                  <Link
+                                    key={item.title}
+                                    href={item.href}
+                                    onClick={() => { setOpen(false); setExpanded(null); }}
+                                    className="group flex items-center gap-4"
+                                  >
+                                    <div className="w-28 h-20 relative rounded-lg overflow-hidden border border-white/10">
+                                      <Image src={item.img} alt={item.title} fill className="object-cover" />
+                                    </div>
+                                    <span className="text-white text-lg">{item.title}</span>
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={link.href ?? '#'}
+                          onClick={() => setOpen(false)}
+                          className="text-white text-2xl font-medium py-3 block"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </motion.li>
+                  ))}
+                </motion.ul>
               </motion.nav>
             </>
           )}

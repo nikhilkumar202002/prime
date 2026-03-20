@@ -1,4 +1,5 @@
 import { MotionH2 } from "@/components/MotionWrappers";
+import { motion } from "framer-motion";
 import GsapStack from "@/components/GsapStack";
 export default function StackCard() {
   return (
@@ -30,14 +31,14 @@ export default function StackCard() {
           <img src="/images/swim.webp" alt="Aqua & Wellness" loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(211.6deg, rgba(0,0,0,0) 59.5%, rgba(0,0,0,0.8) 83.3%)" }}></div>
           <div className="absolute bottom-14 left-10 right-10 lg:left-14 lg:right-14 lg:bottom-25 text-white px-10 lg:px-20 py-8">
-            <div className="flex items-center gap-3 mb-4 text-lg opacity-90">
+            <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.5, ease: 'easeOut' }} className="flex items-center gap-3 mb-4 text-lg opacity-90">
               <span className="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
               Ground Floor
-            </div>
-            <h3 className="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4">Hideaway Swisuites </h3>
-            <p className="text-lg lg:text-xl max-w-md leading-relaxed opacity-90">
+            </motion.div>
+            <motion.h3 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.35 }} transition={{ delay: 0.08, duration: 0.6, ease: 'easeOut' }} className="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4">Hideaway Swisuites</motion.h3>
+            <motion.p initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ delay: 0.12, duration: 0.6, ease: 'easeOut' }} className="text-lg lg:text-xl max-w-md leading-relaxed opacity-90">
               Enjoy Indoor pool with the Comfort.
-            </p>
+            </motion.p>
           </div>
         </div>
 
@@ -46,14 +47,14 @@ export default function StackCard() {
           <img src="/images/hall.webp" alt="Retail & Corporate" loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(130.7deg, rgba(0,0,0,0) 50.5%, rgba(0,0,0,0.357) 60.5%, rgba(0,0,0,0.8) 93.1%)" }}></div>
           <div className="absolute bottom-14 right-10 lg:right-14 text-white text-right px-10 lg:px-20">
-            <div className="flex items-center justify-end gap-3 mb-4 text-lg opacity-90">
+            <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.5, ease: 'easeOut' }} className="flex items-center justify-end gap-3 mb-4 text-lg opacity-90">
               <span className="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
               First &amp; Second Floor
-            </div>
-            <h3 className="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4 w-[60%] ml-auto text-right">The Regal at the Promenade</h3>
-            <p className="text-lg lg:text-xl max-w-md ml-auto leading-relaxed opacity-90">
+            </motion.div>
+            <motion.h3 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.35 }} transition={{ delay: 0.08, duration: 0.6, ease: 'easeOut' }} className="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4 w-[60%] ml-auto text-right">The Regal at the Promenade</motion.h3>
+            <motion.p initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ delay: 0.12, duration: 0.6, ease: 'easeOut' }} className="text-lg lg:text-xl max-w-md ml-auto leading-relaxed opacity-90">
               A timeless event destination crafted for elegant gatherings, and unforgettable moments.
-            </p>
+            </motion.p>
           </div>
         </div>
 
@@ -62,14 +63,14 @@ export default function StackCard() {
           <img src="/images/gym.webp" alt="Fitness & Sports" loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(43.5deg, rgba(0,0,0,0.8) 6.5%, rgba(0,0,0,0.49) 24.6%, rgba(0,0,0,0) 40.5%)" }}></div>
           <div className="absolute bottom-14 left-10 lg:left-14 text-white px-10 lg:px-20 py-8">
-            <div className="flex items-center gap-3 mb-4 text-lg opacity-90">
+            <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.5, ease: 'easeOut' }} className="flex items-center gap-3 mb-4 text-lg opacity-90">
               <span className="w-2.5 h-2.5 rounded-full bg-white inline-block"></span>
               Third &amp; Fourth Floor
-            </div>
-            <h3 className="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4">Oxy Gym</h3>
-            <p className="text-lg lg:text-xl max-w-md leading-relaxed opacity-90">
+            </motion.div>
+            <motion.h3 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.35 }} transition={{ delay: 0.08, duration: 0.6, ease: 'easeOut' }} className="text-4xl lg:text-[60px] font-normal leading-[1.2] mb-4">Oxy Gym</motion.h3>
+            <motion.p initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ delay: 0.12, duration: 0.6, ease: 'easeOut' }} className="text-lg lg:text-xl max-w-md leading-relaxed opacity-90">
               Your comeback starts here
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

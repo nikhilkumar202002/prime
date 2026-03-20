@@ -64,7 +64,7 @@ const ServiceCarousel = () => {
         </div>
 
       <div className="group">
-        <div className="relative h-[520px]">
+        <div className="relative">
         <motion.div
           className="flex gap-5"
           animate={{ x: -(scrollIndex * cardWidth) }}
@@ -74,7 +74,7 @@ const ServiceCarousel = () => {
           {[...services, ...services, ...services].map((service, index) => (
             <div
               key={index}
-              className="relative flex-none w-[380px] h-[480px] rounded-[24px] overflow-hidden group/card"
+              className="relative flex-none w-[380px] h-[520px] rounded-[24px] overflow-hidden group/card"
             >
               <img
                 src={service.image}
@@ -84,22 +84,21 @@ const ServiceCarousel = () => {
               
               {/* Permanent Bottom Fade */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
-
-              {/* Glassmorphic Hover Overlay */}
-              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover/card:opacity-100 backdrop-blur-md transition-all duration-500 flex flex-col justify-end p-8 border border-white/10 rounded-[24px]">
-                <h3 className="text-2xl font-semibold text-white mb-2 transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500">
+              {/* Glassmorphic Hover Overlay (on top) */}
+              <div className="absolute inset-0 z-30 bg-white/5 opacity-0 group-hover/card:opacity-100 backdrop-blur-md transition-all duration-300 flex flex-col justify-end p-8 border border-white/10 rounded-[24px]">
+                <motion.h3 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.45 }} className="text-2xl font-semibold text-white mb-2 transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500">
                   {service.title}
-                </h3>
-                <p className="text-white/80 text-sm leading-relaxed transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500 delay-75">
+                </motion.h3>
+                <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.45, delay: 0.06 }} className="text-white/80 text-sm leading-relaxed transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500 delay-75">
                   {service.description}
-                </p>
+                </motion.p>
               </div>
 
-              {/* Static Text Layer */}
-              <div className="absolute bottom-8 left-8 right-8 text-white group-hover/card:opacity-0 transition-opacity duration-300">
+              {/* Static Text Layer (below overlay) */}
+              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.25 }} transition={{ duration: 0.45 }} className="absolute bottom-8 left-8 right-8 text-white group-hover/card:opacity-0 transition-opacity duration-200 z-10">
                 <h3 className="text-xl font-medium">{service.title}</h3>
                 <p className="text-sm opacity-70 mt-1 line-clamp-1">{service.description}</p>
-              </div>
+              </motion.div>
             </div>
           ))}
         </motion.div>
@@ -107,7 +106,7 @@ const ServiceCarousel = () => {
         </div>
 
         {/* Floating Glass Navigation - left */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-8 lg:left-16 xl:left-32 flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+        <div className="absolute top-1/2 -translate-y-1/2 left-8 lg:left-16 xl:left-32 flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 z-50">
           <button
             onClick={prevSlide}
             aria-label="Previous"
@@ -118,7 +117,7 @@ const ServiceCarousel = () => {
         </div>
 
         {/* Floating Glass Navigation - right */}
-        <div className="absolute top-1/2 -translate-y-1/2 right-8 lg:right-16 xl:right-32 flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0 z-20">
+        <div className="absolute top-1/2 -translate-y-1/2 right-8 lg:right-16 xl:right-32 flex gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0 z-50">
           <button
             onClick={nextSlide}
             aria-label="Next"
